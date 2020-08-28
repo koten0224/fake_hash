@@ -13,6 +13,7 @@ RSpec.describe FakeHash do
     _private_methods.each do |m|
       expect(@hash.private_methods).to be_include m
     end
+    expect(@hash.inspect).to eq '{}'
     # expect()
   end
 
@@ -25,6 +26,7 @@ RSpec.describe FakeHash do
     @hash[:a] = 'rails'
     expect(@hash['a']).to eq 'ruby'
     expect(@hash[:a]).to eq 'rails'
+    expect(@hash.inspect).to eq '{1=2, "1"=5, "a"="ruby", :a="rails"}'
   end
 
 end
