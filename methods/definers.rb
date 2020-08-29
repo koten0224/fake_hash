@@ -14,5 +14,9 @@ module Methods
     def inst_get(key)
       instance_variable_get(trans_key(key))
     end
+
+    def inst_del(key)
+      remove_instance_variable(trans_key(key))
+    end
   end
 end
