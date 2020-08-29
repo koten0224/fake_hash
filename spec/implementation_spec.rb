@@ -13,12 +13,14 @@ RSpec.describe FakeHash do
         trans_key
         inst_set
         inst_get
+        inst_del
+        same_class?
+        iter
       )
       _private_methods.each do |m|
         expect(@hash.private_methods).to be_include m
       end
       expect(@hash.inspect).to eq '{}'
-      # expect()
     end
 
     it 'implement value as different classes keys' do
