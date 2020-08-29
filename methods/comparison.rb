@@ -5,6 +5,9 @@ module Methods
       other.each do |key, value|
         return false if self[key] != value
       end
+      each do |key, value|
+        return false if other[key] != value
+      end
       true
     end
     
