@@ -1,11 +1,5 @@
 module Methods
   module Standard
-    def self.included(base)
-      base.class_eval do
-        alias_method :store, :[]=
-      end
-    end
-
     def clear
       keys.each do |key|
         inst_del(key)

@@ -2,8 +2,8 @@ module Methods
   module Comparison
     def ==(other)
       return false unless same_class?(other)
-      other.each do |key, value|
-        return false if self[key] != value
+      (other.keys + keys).uniq.each do |k|
+        return false if self[k] != other[k]
       end
       true
     end
